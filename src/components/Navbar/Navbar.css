@@ -1,8 +1,8 @@
 nav { background: #dc3545; color:#fff; display: flex; align-items: center; justify-content: space-between; padding-top:15px; padding-bottom:15px; } 
-h1 { display: flex; align-items: center; gap:.5rem; } 
+h1.navbar__banner { display: flex; align-items: center; gap:.5rem; } 
 svg { fill:#fff; width:1.2rem; } 
 
-ul { display: flex; flex-direction: row; gap:1rem; } 
+ul.navbar__items { display: flex; flex-direction: row; gap:1rem; } 
 a { color:inherit; } 
 
 @media screen and (max-width:768px) { nav { flex-direction: column; } 

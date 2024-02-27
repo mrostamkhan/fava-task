@@ -1,0 +1,18 @@
+.profile__box { border:1px dotted #ddd; padding:1rem; } 
+.profile_detail__sec { display:flex; flex-direction:row; gap:1rem; } 
+
+.profile_detail__header { text-align: center; min-width: 40%; } 
+.profile_detail__avatar { width:150px; border-radius: 50%; } 
+
+.profile_detail__info { display: flex; flex-direction: column; align-items: start; gap:.75rem; } 
+
+.profile_detail__activities li { font-size:.8rem; display: inline-block; border:1px solid transparent; border-radius: 5px; margin:.3rem; padding:.2rem .7rem; text-align: center; } 
+.profile_detail__followers { background:#dc3545; color:#fff; } 
+.profile_detail__following { background:#f4f4f4; color:#333; border:1px solid #ccc; } 
+.profile_detail__repos { background:#29aa45; color:#fff; } 
+.profile_detail__gists { background:#333333; color:#fff; } 
+
+
+@media screen and (max-width:768px){
+ .profile_detail__sec { flex-direction:column; } 
+ }

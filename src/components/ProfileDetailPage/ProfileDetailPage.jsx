@@ -12,10 +12,12 @@ const ProfileDetailPage = ({ profileLogin }) => {
     // })
 
     return (
-        <>
-            <ProfileDetail profileLogin={profileLogin} />
-            <ProfileRepositories profileLogin={profileLogin} />
-        </>
+        <div className="container">
+            <main>
+                <ProfileDetail profileLogin={profileLogin} />
+                <ProfileRepositories profileLogin={profileLogin} />
+            </main>
+        </div>
     )
 }
 
