@@ -11,7 +11,7 @@ const ProfileDetail = ({ profileLogin }) => {
     }, [])
 
     const getProfile = async (profileLogin) => {
-        const response = await fetch('https://api.github.com/users/alex?client_id=undefined&client_secret=undefined');
+        const response = await fetch(`https://api.github.com/users/${profileLogin}?client_id=undefined&client_secret=undefined`);
         const responseData = await response.json();
         console.log(responseData)
         setProfile({ ...responseData });
@@ -28,7 +28,7 @@ const ProfileDetail = ({ profileLogin }) => {
 
                 <div className="profile_detail__info">
                     <div>
-                        <h3 class="bold">Bio:</h3>
+                        <h3 className="bold">Bio:</h3>
                         <p>{profile.bio}</p>
                     </div>
 
@@ -43,14 +43,14 @@ const ProfileDetail = ({ profileLogin }) => {
 
             <div className="profile__box">
                 <ul className="profile_detail__activities">
-                    <li class="profile_detail__followers">Followers: {profile.followers}</li>
-                    <li class="profile_detail__following">Following: {profile.following}</li>
-                    <li class="profile_detail__repos">Public Repos: {profile.public_repos}</li>
-                    <li class="profile_detail__gists">Public Gists: {profile.public_gists}</li>
+                    <li className="profile_detail__followers">Followers: {profile.followers}</li>
+                    <li className="profile_detail__following">Following: {profile.following}</li>
+                    <li className="profile_detail__repos">Public Repos: {profile.public_repos}</li>
+                    <li className="profile_detail__gists">Public Gists: {profile.public_gists}</li>
                 </ul>
             </div>
         </>
     )
-} 
+}
 
 export default ProfileDetail;
