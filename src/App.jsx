@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
+import ProfileDetailPage from './components/ProfileDetailPage/ProfileDetailPage'
 import ProfileListPage from './components/ProfileListPage/ProfileListPage'
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <header>
         <Navbar />
       </header>
-      <ProfileListPage />
+      <ProfileDetailPage profileLogin={'mrostamkhan'} />
     </>
   )
 }

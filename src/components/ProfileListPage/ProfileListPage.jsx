@@ -6,9 +6,9 @@ const ProfileListPage = () => {
 
     const [profiles, setProfiles] = useState([]);
 
-    useEffect(() => {
-        console.log(111)
-    }, [])
+    // useEffect(() => {
+    //     console.log(111)
+    // }, [])
 
     const searchProfiles = async ({ term }) => {
         let response = await fetch(`https://api.github.com/search/users?q=${term}&client_id=undefined&client_secret=undefined`);
