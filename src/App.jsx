@@ -6,7 +6,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <ProfileListPage />
     </>
   )
