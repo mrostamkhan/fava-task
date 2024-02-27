@@ -11,7 +11,6 @@ const ProfileListPage = () => {
     }, [])
 
     const searchProfiles = async ({ term }) => {
-        console.log('in root', term);
         let response = await fetch(`https://api.github.com/search/users?q=${term}&client_id=undefined&client_secret=undefined`);
         let responseData = await response.json();
 
@@ -22,7 +21,7 @@ const ProfileListPage = () => {
         <div className="container">
             <main>
                 <ProfileSearch onSearch={searchProfiles} />
-                <ProfileList />
+                <ProfileList profiles={profiles} />
             </main>
         </div>
     )

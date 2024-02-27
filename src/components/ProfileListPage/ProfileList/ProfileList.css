@@ -1,0 +1,2 @@
+.profileList__sec { display: flex; flex-direction: row; gap: 1rem; flex-wrap: wrap;}
+.profileList__sec li { border:1px solid #ddd; } 

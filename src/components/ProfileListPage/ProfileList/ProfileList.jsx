@@ -1,8 +1,12 @@
-const ProfileList = () => {
+import './ProfileList.css'
+import ProfileListItem from "../ProfileListItem/ProfileListItem"
+
+const ProfileList = ({ profiles }) => {
+
     return (
-        <>
-            <p>ProfileList</p>
-        </>
+        <ul className="profileList__sec">
+            {profiles.map((item) => (<li><ProfileListItem profile={item} /></li>))}
+        </ul>
     )
 }
 
