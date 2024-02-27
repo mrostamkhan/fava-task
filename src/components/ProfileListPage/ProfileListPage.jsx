@@ -1,15 +1,21 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import ProfileList from "./ProfileList/ProfileList"
 import ProfileSearch from "./ProfileSearch/ProfileSearch"
 
 const ProfileListPage = () => {
 
+    const [profiles, setProfiles] = useState([]);
+
     useEffect(() => {
         console.log(111)
-    })
+    }, [])
 
-    const searchProfiles = ({ term }) => {
+    const searchProfiles = async ({ term }) => {
         console.log('in root', term);
+        let response = await fetch(`https://api.github.com/search/users?q=${term}&client_id=undefined&client_secret=undefined`);
+        let responseData = await response.json();
+
+        setProfiles([...responseData.items])
     }
 
     return (
