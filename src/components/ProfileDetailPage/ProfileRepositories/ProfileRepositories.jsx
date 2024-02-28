@@ -7,7 +7,7 @@ const ProfileRepositories = ({ profileLogin }) => {
 
     useEffect(() => {
         getRepos();
-    })
+    }, [])
 
     const getRepos = async () => {
         const response = await fetch(`https://api.github.com/users/${profileLogin}/repos?per_page=5&sort=created:asc&client_id=undefined&client_secret=undefined`)
@@ -18,7 +18,7 @@ const ProfileRepositories = ({ profileLogin }) => {
 
     return (
         <ul>
-            {repos.map((item) => <li key={item.id} className="profile__box"><a href={item.html_url}>{item.name}</a></li>)}
+            {repos.map((item) => <li key={item.id} className="profile__box"><a href={item.html_url} target="_blank">{item.name}</a></li>)}
         </ul>
     )
 }

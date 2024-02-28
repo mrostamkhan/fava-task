@@ -24,6 +24,10 @@ button:hover, .btn:hover { opacity: .75; }
 .mt-2 { margin-top: .75rem; } 
 .mt-3 { margin-top: 1rem; } 
 
+.mb-1 { margin-botttom: .5rem; } 
+.mb-2 { margin-botttom: .75rem; } 
+.mb-3 { margin-botttom: 1rem; } 
+
 .bold { font-weight: bold; } 
 .text-center { text-align: center; } 
 
