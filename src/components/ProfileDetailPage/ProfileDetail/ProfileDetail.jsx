@@ -1,21 +1,17 @@
 import './ProfileDetail.css'
 import { useState } from "react";
 import { useEffect } from "react";
+import {ProfileService} from '../../../services/ProfileService'
 
 const ProfileDetail = ({ profileLogin }) => {
 
     const [profile, setProfile] = useState({});
 
     useEffect(() => {
-        getProfile(profileLogin)
+        ProfileService.get(profileLogin).then((res) => {
+            setProfile({ ...res });
+        })
     }, [])
-
-    const getProfile = async (profileLogin) => {
-        const response = await fetch(`https://api.github.com/users/${profileLogin}?client_id=undefined&client_secret=undefined`);
-        const responseData = await response.json();
-        console.log(responseData)
-        setProfile({ ...responseData });
-    }
 
     return (
         <>
