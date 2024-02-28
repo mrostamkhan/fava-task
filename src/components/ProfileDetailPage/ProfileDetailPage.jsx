@@ -1,21 +1,17 @@
 import './ProfileDetailPage.css'
-import { useState } from "react"
+import { useParams, Link } from 'react-router-dom'
 import ProfileDetail from "./ProfileDetail/ProfileDetail";
 import ProfileRepositories from "./ProfileRepositories/ProfileRepositories";
 
-const ProfileDetailPage = ({ profileLogin }) => {
+const ProfileDetailPage = () => {
 
-    const [profile, setProfile] = useState({});
-
-    // useEffect(() => {
-    //     console.log(111);
-    // })
+    const { profileLogin } = useParams();
 
     return (
         <div className="container">
             <main className="profile_detail__page">
                 <div className="mb-3 mt-3 profile_detail__page__header">
-                    <button>Back To Search</button> <span>hireable: </span>
+                    <Link to="/" className="btn btn-ghost">Back To Search</Link> <span>hireable: </span>
                 </div>
                 <ProfileDetail profileLogin={profileLogin} />
                 <ProfileRepositories profileLogin={profileLogin} />
