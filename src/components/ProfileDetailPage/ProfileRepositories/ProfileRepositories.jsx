@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { useEffect } from "react";
-import { ProfileService } from "../../../services/ProfileService";
+import ProfileContext from "../../../shared/ProfileContext";
 
 const ProfileRepositories = ({ profileLogin }) => {
 
-    const [repos, setRepos] = useState([]);
+    const profileContext = useContext(ProfileContext);
+    const { repos } = profileContext;
 
     useEffect(() => {
-        ProfileService.getRepos(profileLogin).then((res) => {
-            setRepos([...res]);
-        });
+        if (profileLogin != '')
+            profileContext.getRepos(profileLogin);
     }, [])
 
     return (

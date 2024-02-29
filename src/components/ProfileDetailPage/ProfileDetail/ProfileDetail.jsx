@@ -1,17 +1,16 @@
 import './ProfileDetail.css'
-import { useState } from "react";
 import { useEffect } from "react";
-import {ProfileService} from '../../../services/ProfileService'
+import { useContext } from 'react';
+import ProfileContext from '../../../shared/ProfileContext';
 
 const ProfileDetail = ({ profileLogin }) => {
 
-    const [profile, setProfile] = useState({});
+    const profileContext = useContext(ProfileContext);
+    const { profile } = profileContext;
 
     useEffect(() => {
-        ProfileService.get(profileLogin).then((res) => {
-            setProfile({ ...res });
-        })
-    }, [])
+        if (profileLogin != '')
+            profileContext.get(profileLogin);    }, [])
 
     return (
         <>

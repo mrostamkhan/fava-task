@@ -1,27 +1,33 @@
+import { useContext } from 'react';
 import { useState } from 'react';
+import ProfileContext from '../../../shared/ProfileContext';
 import './ProfileSearch.css'
 
-const ProfileSearch = ({ onSearch }) => {
+const ProfileSearch = () => {
+
+    const profileContext = useContext(ProfileContext);
+    const { profiles } = profileContext;
 
     const [term, setTerm] = useState('');
 
-    const submitForm = (e) => {
+    const onSubmitHandler = (e) => {
         e.preventDefault();
-        onSearch({ term });
+        if (term)
+            profileContext.setSearchTerm(term);
     }
 
     const clearSearch = () => {
-        setTerm(() => {
-            onSearch({ term:'' });
-            return '';
-        });
+        profileContext.clearSearch();
+        setTerm('');
     }
 
+    const onChangeHandler = (e) => setTerm(e.target.value);
+
     return (
-        <form className="form__sec" onSubmit={submitForm}>
-            <input type="text" value={term} onChange={(e) => setTerm(e.target.value)} placeholder="Search Users" />
+        <form className="form__sec" onSubmit={onSubmitHandler}>
+            <input type="text" value={term} onChange={onChangeHandler} placeholder="Search Users" />
             <button type="submit" className="btn-primary">Submit</button>
-            <button type="button" onClick={clearSearch} className="btn-ghost">Clear</button>
+            {profiles.data.length > 0 && <button type="button" onClick={clearSearch} className="btn-ghost">Clear</button>}
         </form>
     )
 }

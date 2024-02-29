@@ -1,3 +1,5 @@
+import Alert from "../components/Shared/Alert";
+
 export const ProfileService = {
     getList: async (term) => {
         let response = await fetch(`https://api.github.com/search/users?q=${term}&client_id=undefined&client_secret=undefined`);
@@ -19,4 +21,3 @@ export const ProfileService = {
     },
 
 }
-
