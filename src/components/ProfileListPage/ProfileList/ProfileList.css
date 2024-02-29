@@ -1,0 +1,6 @@
+.profileList__sec { display: grid; grid-template-columns: repeat(3,1fr);gap:1rem; } 
+.profileList__sec li { border:1px solid #ddd; } 
+
+@media screen and (max-width:768px){
+ .profileList__sec { grid-template-columns: 1fr; } 
+ }
